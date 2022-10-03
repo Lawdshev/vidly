@@ -21,7 +21,28 @@
         <article style="width: 100%;text-align: center;font-size: 16px;">
             <%= movies.overview %>
         </article>   
-        <button style="margin: 2% auto;cursor:pointer;padding: 4px 7px;color: white;background-color: red;border: none;">Delete Post</button>
+        <a class="delete" style="margin: 2% auto;cursor:pointer;padding: 4px 7px;color: white;background-color: red;border: none;" data-doc="<%= movies.id %>">delete</a>
     </div>
+
+    <script>
+        const trashcan = document.querySelector('a.delete')
+        
+
+        const deletePost = (e) =>{
+            try {
+                const endpoint = `/movies/${trashcan.dataset.doc}`;
+                fetch(endpoint, {
+                    method: 'DELETE',
+                })
+                .then(response => response.json())
+                .then(data => window.location.href = data.redirect)
+                .catch(err => console.log(err));
+            } catch (error) {
+                console.log(error)
+            }             
+        }
+
+        trashcan.addEventListener('click',deletePost);
+    </script>
 </body>
 </html>

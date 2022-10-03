@@ -20,7 +20,7 @@ const movie_create = (req,res)=>{
       console.log(error);
 }};
 const movie_get = (req,res)=>{
-    let movies = moviesDatabase.find((c)=> {return c.id ===  parseInt(req.params.id)})
+    let movies = moviesDatabase.find((c)=> {return c.id ===  parseInt(req.params.id)});
     try {
       res.render('detail',{title: 'detail', movies })
     } catch (error) {
@@ -39,6 +39,15 @@ const movie_post = (req,res)=>{
     } catch (error) {
       console.log(error);
 }};
+const movie_delete = (req,res)=>{
+    let movies = moviesDatabase.find((c)=> {return c.id ===  parseInt(req.params.id)});
+    let index =  moviesDatabase.indexOf(movies);
+    moviesDatabase.splice(index, 1)
+    try {
+        res.json({ redirect: '/' });
+      } catch (error) {
+        console.log(error);}
+};
 
 
 module.exports = {
@@ -46,5 +55,6 @@ module.exports = {
     movie_about,
     movie_create,
     movie_get,
-    movie_post
+    movie_post,
+    movie_delete
 }
