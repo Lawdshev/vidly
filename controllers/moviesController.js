@@ -19,8 +19,32 @@ const movie_create = (req,res)=>{
     } catch (error) {
       console.log(error);
 }};
+const movie_get = (req,res)=>{
+    let movies = moviesDatabase.find((c)=> {return c.id ===  parseInt(req.params.id)})
+    try {
+      res.render('detail',{title: 'detail', movies })
+    } catch (error) {
+      console.log(error);
+}};
+const movie_post = (req,res)=>{
+    let movies = {
+        id : moviesDatabase.length + 1,
+        title : req.body.title,
+        genre : req.body.genre,
+        overview: req.body.overview
+    }
+    moviesDatabase.push(movies);
+    try {
+      res.redirect(301,'/')
+    } catch (error) {
+      console.log(error);
+}};
+
+
 module.exports = {
     movie_index,
     movie_about,
     movie_create,
+    movie_get,
+    movie_post
 }

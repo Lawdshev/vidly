@@ -22,7 +22,7 @@
         else {
             %> <% movies.forEach(movies => { %>
                 <div style=" background-color: rgb(184, 118, 118);padding: 5%;">
-                    <a class="single" href="/movies/<%= movies._id %>" style="text-decoration: none;color: white;">
+                    <a class="single" href="/movies/<%=movies.id %>" style="text-decoration: none;color: white;">
                     <h3 class="title" style="text-decoration: underline;"> Title: <%= movies.title %></h3>
                     <p class="snippet"> Genre: <%= movies.genre %></p>
                     <h3>overview:</h3>

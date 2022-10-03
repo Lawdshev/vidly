@@ -1,8 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include("./partials/Head.ejs") %>
-<body>
-    <%- include("./partials/navbar.ejs") %>
-    <P>THIS IS DETAILS LAND</P>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vividio || <%= title %> </title>
+</head>
+<body style="padding: 0 5%;">
+    <div class="navbar" style="width: 100%;display: flex;align-items: center;justify-content: center;background-color: rgb(184, 118, 118);">
+        <ul style="width: 90%;display: flex;align-items: center;justify-content: space-around; list-style: none;font-size: 20px; font-weight: 700;color: white;">
+            <li><a href="/" style="text-decoration: none;color: white;"> Movies</a></li>
+            <li><a href="/About" style="text-decoration: none;color: white;"> About</a></li>
+            <li><a href="/new_movie" style="text-decoration: none;color: white;"> Add New</a></li>
+        </ul>
+   </div>
+   <div style=" background-color: rgb(184, 118, 118);padding: 5%;color: white;">
+        <h3 class="title" style="text-decoration: underline;"> Title: <%= movies.title %></h3>
+        <p class="snippet"> Genre: <%= movies.genre %></p>
+        <h3>overview:</h3>
+        <article style="width: 100%;text-align: center;font-size: 16px;">
+            <%= movies.overview %>
+        </article>   
+        <button style="margin: 2% auto;cursor:pointer;padding: 4px 7px;color: white;background-color: red;border: none;">Delete Post</button>
+    </div>
 </body>
 </html>
