@@ -6,30 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vividio || <%= title %> </title>
 </head>
-<body style="padding: 0 5%;">
-    <div class="navbar" style="width: 100%;display: flex;align-items: center;justify-content: center;background-color: rgb(184, 118, 118);">
+<body style="padding: 0 2%;">
+    <div class="navbar" style="width: 100%;display: flex;align-items: center;justify-content: center;background-color: black">
         <ul style="width: 90%;display: flex;align-items: center;justify-content: space-around; list-style: none;font-size: 20px; font-weight: 700;color: white;">
             <li><a href="/" style="text-decoration: none;color: white;"> Movies</a></li>
             <li><a href="/About" style="text-decoration: none;color: white;"> About</a></li>
             <li><a href="/new_movie" style="text-decoration: none;color: white;"> Add New</a></li>
         </ul>
    </div>
-        <form action="/" method="post" style="display: flex;flex-direction: column;align-items: center;width: 100%; padding: 10% 0;margin: 3% auto;background-color:rgb(184, 118, 118) ;">
-            <label for="title" style="display: flex;flex-direction: column;width: 70%;">
-                title: <input type="text" name="title" required>
+        <form action="/" method="post" style="display: flex;flex-direction: column;align-items: center;width: 100%; font-size: large; padding: 10% 0;margin: 3% auto;background-color:black ;">
+            <label for="title" style="display: flex;flex-direction: column;width: 70%;color: white;">
+                Title: <input type="text" name="title" required>
             </label>
             
-            <label for="genre" style="display: flex;flex-direction: column;width: 70%; ">
-                genre: <input type="text" name="genre" required>
+            <label for="genre" style="display: flex;flex-direction: column;width: 70%;color: white; ">
+                Release_date: <input type="text" name="release_date" required>
             </label>
-            
-            <label for="overview" style="display: flex;flex-direction: column;width: 70%;">
-                overview: <textarea name="overview"  cols="30" rows="10" required>
 
+            <label for=" popularity " style="display: flex;flex-direction: column;width: 70%;color: white; ">
+                popularity: <input type="text" name=" popularity " required>
+            </label>
+            <label for="original_language" style="display: flex;flex-direction: column;width: 70%;color: white; ">
+                Original_language: <input type="text" name="original_language" required>
+            </label>
+            
+            <label for="overview" style="display: flex;flex-direction: column;width: 70%;color: white;">
+                Overview: <textarea name="overview"  cols="30" rows="10" required>
                 </textarea>
             </label>
             
-            <input type="submit" value="submit" style="margin-top: 3% ;padding: 5px 10px;">
+            <input type="submit" value="POST" style="margin-top: 3% ;padding: 7px 20px;font-weight: 600;">
         </form>
 </body>
 </html>

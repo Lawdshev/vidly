@@ -1,4 +1,4 @@
-api_url = 'https://image.tmdb.org/t/p/w500/lG56H40Y1BuHSPoWtEgDJsSgDBZ.jpg'
+api_url = 'https://image.tmdb.org/t/p/w500'
 const moviesDatabase =
     [
        {
@@ -7,7 +7,7 @@ const moviesDatabase =
            "original_language": "en",
            "overview": "An ex-marine enforcer must battle his conscience and code of honor when he is forced to do things for the mob.",
            "popularity": 1522.228,
-           "poster_path": api_url + "/lG56H40Y1BuHSPoWtEgDJsSgDBZ.jpg",
+           "poster_path":"https://image.tmdb.org/t/p/w500/lG56H40Y1BuHSPoWtEgDJsSgDBZ.jpg",
            "release_date": "2022-06-03",
            "title": "White Elephant",
        },
@@ -25,7 +25,7 @@ const moviesDatabase =
            "original_language": "en",
            "overview": "After more than thirty years of service as one of the Navy’s top aviators, and dodging the advancement in rank that would ground him, Pete “Maverick” Mitchell finds himself training a detachment of TOP GUN graduates for a specialized mission the likes of which no living pilot has ever seen.",
            "popularity": 1580.086,
-           "poster_path": api_url + "/62HCnUTziyWcpDaBO2i1DX17ljH.jpg",
+           "poster_path": "https://image.tmdb.org/t/p/w500/62HCnUTziyWcpDaBO2i1DX17ljH.jpg",
            "release_date": "2022-05-24",
            "title": "Top Gun: Maverick",
        },

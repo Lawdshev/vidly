@@ -4,24 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Vividio || <%= title %> </title>
 </head>
-<body style="padding: 0 5%;">
-    <div class="navbar" style="width: 100%;display: flex;align-items: center;justify-content: center;background-color: rgb(184, 118, 118);">
-        <ul style="width: 90%;display: flex;align-items: center;justify-content: space-around; list-style: none;font-size: 20px; font-weight: 700;color: white;">
-            <li><a href="/" style="text-decoration: none;color: white;"> Movies</a></li>
-            <li><a href="/About" style="text-decoration: none;color: white;"> About</a></li>
-            <li><a href="/new_movie" style="text-decoration: none;color: white;"> Add New</a></li>
-        </ul>
+<body style="padding: 0 2%;">
+    <div class="navbar">
+        <ul>
+           <li><a href="/" > Movies</a></li>
+           <li><a href="/About"> About</a></li>
+           <li><a href="/new_movie"> Add New</a></li>
+       </ul>
    </div>
-   <div style=" background-color: rgb(184, 118, 118);padding: 5%;color: white;">
-        <h3 class="title" style="text-decoration: underline;"> Title: <%= movies.title %></h3>
-        <p class="snippet"> Genre: <%= movies.genre %></p>
-        <h3>overview:</h3>
-        <article style="width: 100%;text-align: center;font-size: 16px;">
-            <%= movies.overview %>
-        </article>   
-        <a class="delete" style="margin: 2% auto;cursor:pointer;padding: 4px 7px;color: white;background-color: red;border: none;" data-doc="<%= movies.id %>">delete</a>
+   <div style=" background-color: black;padding: 5%;color: white;">
+    <div class="single" >
+        <div class="pica" >
+            <img src="<%=movies.poster_path%>" alt="" class="img">
+        </div>
+        <div class="texts" >
+            <h2 class="title" > Title: <%= movies.title %></h2>
+            <p >Release_date: <%= movies.release_date %></p>
+            <p >Original_language: <%= movies.original_language %></p>
+            <p class="snippet" > Popularity: <%= movies.popularity %></p>
+            <h3>overview:</h3>
+            <article>
+                <%= movies.overview %>
+            </article>
+            <div class="btns">
+                <a class="delete btn" data-doc="<%= movies.id %>">Delete</a>
+                <a class="update btn" href="" >Update</a>
+            </div>
+        </div>
+    </div>
     </div>
 
     <script>
@@ -30,7 +43,7 @@
 
         const deletePost = (e) =>{
             try {
-                const endpoint = `/movies/${trashcan.dataset.doc}`;
+                const endpoint = `/${trashcan.dataset.doc}`;
                 fetch(endpoint, {
                     method: 'DELETE',
                 })
